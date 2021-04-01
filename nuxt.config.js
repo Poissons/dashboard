@@ -16,7 +16,8 @@ const dev = (process.env.NODE_ENV !== 'production');
 const pl = process.env.PL || STANDARD;
 const commit = process.env.COMMIT || 'head';
 
-let api = process.env.API || 'http://localhost:8989';
+// 要改回来
+let api = process.env.API || 'http://122.9.131.47';
 
 if ( !api.startsWith('http') ) {
   api = `https://${ api }`;
@@ -302,7 +303,13 @@ module.exports = {
     '/v3-public': proxyOpts(api), // Rancher Unauthed API
     '/api-ui':    proxyOpts(api), // Browser API UI
     '/meta':      proxyOpts(api), // Browser API UI
-    '/v1-saml':    proxyOpts(api)
+    '/v1-saml':    proxyOpts(api),
+    '/webTank': {
+    ...proxyOpts('http://localhost:5500/'),
+    pathRewrite: {
+      '^/webTank': '/',
+    },
+  }
   },
 
   // Nuxt server

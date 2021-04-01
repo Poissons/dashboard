@@ -75,9 +75,7 @@ export default {
     </div>
 
     <div class="back">
-      <a v-if="currentProduct && isRancher" class="btn role-tertiary" :href="(currentProduct.inStore === 'management' ? backToRancherGlobalLink : backToRancherLink)">
-        {{ t('nav.backToRancher') }}
-      </a>
+      <a class="btn role-tertiary" target="_blank" :href="'/webTank/TANK-sys.html'">TANK</a>
     </div>
 
     <div class="import">
