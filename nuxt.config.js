@@ -304,6 +304,8 @@ module.exports = {
     '/api-ui':    proxyOpts(api), // Browser API UI
     '/meta':      proxyOpts(api), // Browser API UI
     '/v1-saml':    proxyOpts(api),
+    '/request':     proxyOpts('http://192.168.1.34:5000'),
+    '/collect':     proxyOpts('http://192.168.1.35:5000'),
     '/webTank': {
     ...proxyOpts('http://localhost:5500/'),
     pathRewrite: {
