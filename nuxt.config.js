@@ -306,8 +306,8 @@ module.exports = {
     '/v1-saml':    proxyOpts(api),
     // 发送request
     // '/request':     proxyOpts('http://192.168.1.34:5000'),
-    // 得到全部节点的resource占用情况和每个cluster资源情况和每个cluster执行情况和全部执行情况
-    // '/resourceAndExecuteAll':     proxyOpts('http://192.168.1.35:5000'),
+    // 每个cluster执行情况和全部执行情况
+    // '/ExecuteAll':     proxyOpts('http://192.168.1.35:5000'),
     //转发到webTank
     '/webTank': {
     ...proxyOpts('http://localhost:5500/'),
