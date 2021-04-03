@@ -307,7 +307,7 @@ module.exports = {
     // 发送request
     // '/request':     proxyOpts('http://192.168.1.34:5000'),
     // 每个cluster执行情况和全部执行情况
-    // '/ExecuteAll':     proxyOpts('http://192.168.1.35:5000'),
+    '/ExecuteAll':     proxyOpts('http://192.168.1.35:5000'),
     //转发到webTank
     '/webTank': {
     ...proxyOpts('http://localhost:5500/'),
