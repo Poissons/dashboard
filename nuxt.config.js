@@ -295,26 +295,26 @@ module.exports = {
 
   // Proxy: https://github.com/nuxt-community/proxy-module#options
   proxy: {
-    '/k8s':       proxyWsOpts(api), // Straight to a remote cluster (/k8s/clusters/<id>/)
-    '/api':       proxyWsOpts(api), // Management k8s API
-    '/apis':      proxyWsOpts(api), // Management k8s API
-    '/v1':        proxyWsOpts(api), // Management Steve API
-    '/v3':        proxyWsOpts(api), // Rancher API
-    '/v3-public': proxyOpts(api), // Rancher Unauthed API
-    '/api-ui':    proxyOpts(api), // Browser API UI
-    '/meta':      proxyOpts(api), // Browser API UI
-    '/v1-saml':    proxyOpts(api),
+    '/k8s':             proxyWsOpts(api), // Straight to a remote cluster (/k8s/clusters/<id>/)
+    '/api':             proxyWsOpts(api), // Management k8s API
+    '/apis':            proxyWsOpts(api), // Management k8s API
+    '/v1':              proxyWsOpts(api), // Management Steve API
+    '/v3':              proxyWsOpts(api), // Rancher API
+    '/v3-public':       proxyOpts(api), // Rancher Unauthed API
+    '/api-ui':          proxyOpts(api), // Browser API UI
+    '/meta':            proxyOpts(api), // Browser API UI
+    '/v1-saml':         proxyOpts(api),
     // 发送request
     // '/request':     proxyOpts('http://192.168.1.34:5000'),
+    // 发送算法选择
+    '/algorithmChosen':     proxyOpts('http://192.168.1.34:5000'),
     // 每个cluster执行情况和全部执行情况
-    '/ExecuteAll':     proxyOpts('http://192.168.1.35:5000'),
-    //转发到webTank
-    '/webTank': {
-    ...proxyOpts('http://localhost:5500/'),
-    pathRewrite: {
-      '^/webTank': '/',
-    },
-  }
+    '/ExecuteAll':      proxyOpts('http://192.168.1.35:5000'),
+    // 转发到webTank
+    '/webTank':         {
+      ...proxyOpts('http://localhost:5500/'),
+      pathRewrite: { '^/webTank': '/' },
+    }
   },
 
   // Nuxt server
